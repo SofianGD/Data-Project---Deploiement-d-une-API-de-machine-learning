@@ -15,19 +15,36 @@ alice 	    wonderland
 bob	        builder
 clementine	mandarine
 
+Ces derniers peuvent s’authentifier comme ci-dessous : 
+ 
+![image](https://user-images.githubusercontent.com/95073322/154958479-0cb9ab8b-8a90-45ad-bac6-986ac67d2053.png)
+
+Et ainsi obtenir les scores des différents modèles : 
+
+![image](https://user-images.githubusercontent.com/95073322/154958543-ec9a4d4a-01b9-4d12-b329-c1b2ad4f3247.png)
+
 
 
 Comment fonctionne l’API ? 
 
-
 Pour lancer l’API il faut exécuter le programme : train.py
 
-Le fichier train.py est lancé, il calcule les scores des deux modèles de machine learning et les stocks dans un fichier texte « scores_modeles.txt » afin que les scores ne soient calculés qu’une seule et unique fois. 
+![image](https://user-images.githubusercontent.com/95073322/154958689-090c7b3b-738a-4753-8fd2-3b5cc367e3f4.png)
+
+Le fichier train.py est lancé, il calcule les scores des deux modèles de machine learning et les stocks dans un fichier texte « scores_modeles.txt » afin que les scores ne soient calculés qu’une seule et unique fois.
+
+![image](https://user-images.githubusercontent.com/95073322/154958752-ff9983fa-2eec-401d-bcd4-ed7dc45d51a3.png)
+
 
 A la fin du fichier train.py, on lance automatiquement le fichier main.py qui contient l’API FastAPI grâce à la commande :
 
 cmd = 'python3 main.py'
 os.system(cmd)
+
+Le fichier main.py peut lancer le serveur Uvicorn grâce à cette ligne de code : 
+
+![image](https://user-images.githubusercontent.com/95073322/154958882-437a83a5-fa93-4b9d-9bd8-ec3585bc88f4.png)
+
 
 L’API est lancée et les scores sont disponibles.
 
@@ -52,6 +69,13 @@ J’ai rajouté un « sleep 15 » dans les dockerfiles des deux tests permettant
 
 Pour faciliter cela j’ai créé un fichier bash test.sh qui permet d’automatiser la création des différentes images et le lancement du docker-compose.
 
+![image](https://user-images.githubusercontent.com/95073322/154958962-1283bb69-1cce-4c53-bb0b-678269251928.png)
+
+![image](https://user-images.githubusercontent.com/95073322/154958983-7f6f4170-8e7f-4822-b79f-36229051384b.png)
+
+Les requêtes sont effectuées comme ci-dessous : 
+
+![image](https://user-images.githubusercontent.com/95073322/154959017-8a28f2ad-0b01-488f-b9d3-b0ff39c0b6f7.png)
 
 Kubernetes :
 
@@ -60,7 +84,7 @@ Trois fichiers sont nécessaires au bon déploiement de l’API :
 -	Un Service
 -	Un Ingress 
 On choisira de déployer l’API sur 3 Pods.
-![image](https://user-images.githubusercontent.com/95073322/154958341-74ddab0a-b66c-44d1-b203-805e63fa4395.png)
+
 
 
 
